@@ -8,7 +8,7 @@ function STORE_ITEM:SetSubGroup(sGroupName, iGroupWeight)
                 pl:SetSubscribe(sGroupName)
             end
         end
-    end)self:SetMeta("ultima_subs")
+    end):SetMeta("ultima_subs")
 
     self.sub_group = self:Insert(IGS.SUB_GROUPS, sGroupName)
     self.sub_group_weight = iGroupWeight or 0
