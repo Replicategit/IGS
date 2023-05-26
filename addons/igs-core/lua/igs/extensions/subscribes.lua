@@ -12,10 +12,6 @@ function STORE_ITEM:SetSubGroup(sGroupName, iGroupWeight)
         end
     end)
 
-    self:SetValidator(function(pl)
-        if pl:GetSubscribe() ~= "user" then return "У вас уже есть действующая подписка, для улучшения текущей подписки выберите соответствующий предмет" end
-    end)
-
     self.sub_group = self:Insert(IGS.SUB_GROUPS, sGroupName)
     self.sub_group_weight = iGroupWeight or 0
 
