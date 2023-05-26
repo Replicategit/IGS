@@ -42,7 +42,7 @@ hook.Add("IGS.PlayerPurchasesLoaded", "IGS_ULTIMA_SUBS", function(pl, purchases)
         for _, v in ipairs(purchased_subs) do
             local ITEM = IGS.GetItemByUID(v)
 
-            if ITEM.sub_group_weight > priority_item.subgroup_weight then
+            if ITEM.sub_group_weight > priority_item.sub_group_weight then
                 priority_item = ITEM
             end
         end
