@@ -2,15 +2,13 @@ IGS.SUB_GROUPS = IGS.SUB_GROUPS or {}
 local STORE_ITEM = FindMetaTable("IGSItem")
 
 function STORE_ITEM:SetSubGroup(sGroupName, iGroupWeight)
-    self:SetMeta("ultima_subs")
-
     self:SetInstaller(function(pl)
         if SERVER then
             if pl.SetSubscribe then
                 pl:SetSubscribe(sGroupName)
             end
         end
-    end)
+    end)self:SetMeta("ultima_subs")
 
     self.sub_group = self:Insert(IGS.SUB_GROUPS, sGroupName)
     self.sub_group_weight = iGroupWeight or 0
